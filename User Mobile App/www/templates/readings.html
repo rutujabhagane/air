@@ -1,0 +1,54 @@
+<ion-view view-title="Readings">
+  <ion-content>
+	<ion-refresher on-refresh="doRefresh()"></ion-refresher><!-- pull to refresh -->
+	<div class="list card">
+	
+	  <div class="item" style="font-size:0.9em;font-weight:bold;" ng-if="moisture_readings != 'No farm units' && moisture_readings != 0">
+		Farm last watered on
+		<span ng-repeat="readings in moisture_readings">
+			{{readings.date}}
+		</span>
+	  </div>
+
+	  <div class="item item-text-wrap item-icon-left" style="font-size:0.9em;" ng-if="moisture_readings != 'No farm units' && moisture_readings != 0">
+		<i class="icon ion-waterdrop" style="color:#2c2cbf"></i>
+		Recent Moisture Readings (Percentage): 
+		<span ng-repeat="readings in moisture_readings">
+				{{readings.reading}}
+		</span>
+	  </div>
+
+	  <div class="item item-text-wrap item-icon-left" ng-if="moisture_readings == 'No farm units'">
+		<i class="icon ion-waterdrop" style="color:#2c2cbf"></i>
+		Recent Moisture Readings: The farm has no farm units, contact admin
+	  </div>
+
+	  <div class="item item-text-wrap item-icon-left" ng-if="moisture_readings == 0">
+		<i class="icon ion-waterdrop" style="color:#2c2cbf"></i>
+		Recent Moisture Readings: No moisture readings from farm unit(s)
+	  </div>
+      
+
+	  <div class="item item-text-wrap item-icon-left" style="font-size:0.9em;" ng-if="temperature_readings != 'No farm units' && temperature_readings != 0">
+		<i class="icon ion-thermometer" style="color:red"></i>
+		Recent Temperature Readings (Degrees Celcius):
+		<span ng-repeat="readings in temperature_readings">
+				{{readings.reading}}
+			</span>
+	  </div>
+	  
+	  <div class="item item-text-wrap item-icon-left" ng-if="temperature_readings == 'No farm units'">
+		<i class="icon ion-thermometer" style="color:red"></i>
+		Recent Temperature Readings: The farm has no farm units, contact admin
+	  </div>
+
+	  <div class="item item-text-wrap item-icon-left" ng-if="temperature_readings == 0">
+		<i class="icon ion-thermometer" style="color:red"></i>
+		Recent Temperature Readings: No moisture readings from farm unit(s)
+	  </div>
+	 
+
+	</div>
+	
+  </ion-content>
+</ion-view>

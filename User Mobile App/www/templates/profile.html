@@ -1,0 +1,57 @@
+<ion-view view-title="Profile">
+
+<ion-content style='padding-left:0.5em;padding-right:0.5em;'>
+	
+	<ion-refresher on-refresh="doRefresh()"></ion-refresher><!-- pull to refresh -->
+	<div ng-show='account_fetched'>	
+					
+				<div class="card" style='margin-bottom: -1em;'>
+				  <div class="item item-text-wrap item item-icon-left">
+					<i class="icon ion-ios-body" style='color:#003366'></i>
+					<b>First Name</b></br>
+					{{account.firstname}}
+				  </div>
+				</div>
+				
+				<div class="card" style='margin-bottom: -1em;'>
+				  <div class="item item-text-wrap item item-icon-left">
+					<i class="icon ion-ios-body" style='color:#003366'></i>
+					<b>Last Name</b></br>
+					{{account.lastname}}
+				  </div>
+				</div>
+				
+				<div class="card" ng-show="account.othernames" style='margin-bottom: -1em;'>
+				  <div class="item item-text-wrap item item-icon-left">
+					<i class="icon ion-ios-body" style='color:#003366'></i>
+					<b>Other Names</b></br>
+					{{account.othernames}}
+				  </div>
+				</div>
+				
+
+				<div class="card" style='margin-bottom: -1em;'>
+				  <div class="item item-text-wrap item item-icon-left">
+					<i class="icon ion-location" style='color:#003366'></i>
+					<b>Location</b></br>
+					{{account.region}} / {{account.town}}
+				  </div>
+				</div>
+				
+				<div class="card" style='margin-bottom: -1em;'>
+				  <div class="item item-text-wrap item item-icon-left">
+					<i class="icon ion-android-phone-portrait" style='color:#003366'></i>
+					<b>Phone</b></br>
+				   {{account.phone}}
+				  </div>
+				</div>
+				
+	</div>
+	</br></br>
+	<button class="button button-full icon-right ion-log-out button-assertive" ng-click="logout()">
+		Log out
+	</button>
+	
+</ion-content>
+
+</ion-view>

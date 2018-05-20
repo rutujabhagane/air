@@ -1,0 +1,58 @@
+.overflow-scroll {
+  overflow-y: auto;
+}
+
+a{
+	text-decoration: none;
+}
+
+/*Fonts*/
+@font-face {
+    font-family:interstate_font;
+    src: url(../fonts/interstate.ttf);
+}
+@font-face {
+    font-family:OpenSans_font;
+    src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family:Montserrat_font;
+    src: url(../fonts/Montserrat-Light.otf);
+}
+
+.main-loading{
+  margin-left: 50%;
+}
+
+
+.button{
+	font-size: 15px;
+	text-align: left;
+	text-decoration: none;
+	border: 1px solid;
+	border-radius: 3px;
+	display: block;	
+}
+
+.settings_button{
+	margin-top: 1px !important;
+	margin-bottom: 0px !important;
+	display: block !important;
+}
+
+.settings_label{
+	border: 0px !important;
+}
+
+/* ion-spinner*/
+.spinner.spinner-balanced {
+    margin-top: 3.3em !important;
+}
+
+/*.background{
+	background-image: url('../resourses/background_one.jpg') no-repeat fixed center !important;
+	background-size: cover;
+}*/
+
+

@@ -1,0 +1,61 @@
+Header set Access-Control-Allow-Origin "*"
+RewriteEngine On
+
+#preventing access to server files
+<FilesMatch "\.(htaccess|htpasswd|ini|phps|fla|psd|log|sh)$">
+ Order Allow,Deny
+ Deny from all
+</FilesMatch>
+
+#Rewriting server errors
+#ErrorDocument 404 http://www.air.com/404_page.php
+#ErrorDocument 500 404_page.php
+
+#Rewriting pages
+#RewriteRule ^404$ 404_page.php [NC]
+#RewriteRule ^401$ 401_page.php [NC]
+
+##### USER #####
+RewriteRule ^index$ index.php [NC]
+RewriteRule ^login$ irruser/user.index.php [NC]
+RewriteRule ^$ index.php [NC]
+RewriteRule ^userdashboard$ irruser/user.dashboard.php [NC]
+RewriteRule ^userlogout$ irruser/logout.php [NC]
+RewriteRule ^userprofile$ irruser/user.profile.php [NC]
+RewriteRule ^usermessages$ irruser/user.messages.php [NC]
+RewriteRule ^usermessage&id=([0-9]+)$ irruser/user.message.php?id=$1 [NC]
+RewriteRule ^userreadings&id=([0-9]+)&farm_name=([A-Za-z0-9_\s]+)$ irruser/user.readings.php?id=$1&farm_name=$2 [NC]
+
+
+##### ADMIN #####
+RewriteRule ^adminlogin$ admin.index.php [NC]
+
+RewriteRule ^dashboard$ dashboard.php [NC]
+RewriteRule ^logout$ logout.php [NC]
+RewriteRule ^addadministrator$ add_admin.php [NC]
+RewriteRule ^viewadmins$ view_admins.php [NC]
+RewriteRule ^editprofile$ edit_profile.php [NC]
+RewriteRule ^profile$ profile.php [NC]
+RewriteRule ^adduser$ add_user.php [NC]
+RewriteRule ^viewusers$ view_users.php [NC]
+RewriteRule ^sinfo$ serverinfo.php [NC]
+RewriteRule ^addfarm$ add_farm.php [NC]
+RewriteRule ^viewfarms$ view_farms.php [NC]
+RewriteRule ^runalgorithm$ run_algorithm.php [NC]
+RewriteRule ^sndmsg$ send_msg.php [NC]
+RewriteRule ^adminreport$ report.php [NC]
+
+RewriteRule ^terms$ terms.php [NC]
+RewriteRule ^about$ about.php [NC]
+RewriteRule ^help$ help.php [NC]
+
+RewriteRule ^editadmin&id=([0-9]+)$ edit_admin.php?id=$1
+RewriteRule ^edituser&id=([0-9]+)$ edit_user.php?id=$1
+RewriteRule ^editfarm&id=([0-9]+)$ edit_farm.php?id=$1
+RewriteRule ^stats&id=([0-9]+)$ farm_stats.php?id=$1
+
+
+RewriteRule ^editfarmunit&id=([0-9]+)$ edit_farm_unit.php?id=$1
+
+
+

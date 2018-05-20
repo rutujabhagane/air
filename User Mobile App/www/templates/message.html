@@ -1,0 +1,21 @@
+<ion-view view-title="{{message_subject}}">
+  <ion-content>
+	
+	<div class='row'>
+		 <div class="col col-50" style="margin-top:0.4em;">
+			{{date}}
+		 </div>
+		<div class="col col-50">
+			<button ng-click="deleteMessage()" style="width:10em;text-align:center;" class="button button-small  button-assertive"><i class='icon ion-android-delete'></i> Delete message</button>
+		</div>
+		
+	</div>
+	
+	<div class="card">
+	  <div class="item item-text-wrap">
+		{{message}}
+	  </div>
+	</div>
+	
+  </ion-content>
+</ion-view>

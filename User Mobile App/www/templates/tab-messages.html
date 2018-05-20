@@ -1,0 +1,45 @@
+<ion-view view-title="Messages">
+  <style>
+	.messages_list{
+		margin-top: -12px !important;
+	}
+  </style>
+  <ion-content>
+	<ion-refresher on-refresh="doRefresh()"></ion-refresher><!-- pull to refresh -->
+	<div style='margin-top:1em;'>
+        <ion-spinner ng-if='readloading && unReadloading' class='main-loading' icon="ripple"> Loading</ion-spinner>
+    </div>
+	
+    <div class="messages_list list" ng-if='!readloading && !unReadloading'>
+		<div class="item item-divider ">
+			Unread
+		</div>
+			
+			<a href="#/tab/messages/{{message.id}}/{{message.message}}/{{message.subject}}/{{message.user_read}}/{{message.date}}" ng-if="haveUnreadMessage" ng-repeat="message in Unreadmessages">
+				<div class="item">
+					{{message.subject}}
+				</div>
+			</a>
+			
+			<div class="item" ng-if="!haveUnreadMessage">
+				You have no unread messages
+			</div>
+			
+		<div class="item item-divider ">
+			Read
+		</div>
+			
+			<a href="#/tab/messages/{{message.id}}/{{message.message}}/{{message.subject}}/{{message.user_read}}/{{message.date}}" ng-if="haveReadMessage" ng-repeat="message in Readmessages">
+				<div class="item">
+					{{message.subject}}
+				</div>
+			</a>
+			
+			<div class="item" ng-if="!haveReadMessage">
+				You have no read messages
+			</div>
+		
+	</div>
+		
+  </ion-content>
+</ion-view>

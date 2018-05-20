@@ -1,0 +1,32 @@
+
+<ion-view view-title="Dashboard">
+
+  <ion-content style="padding:1em;">
+    
+	<ion-refresher on-refresh="doRefresh()"></ion-refresher><!-- pull to refresh -->
+	<div style='margin-top:1em;'>
+        <ion-spinner ng-if='loading' class='main-loading' icon="ripple"> Loading</ion-spinner>
+    </div>
+	
+	<h4>Your farms</h4>
+	<div ng-if="!loading">
+        <div class="row header" style='border:1px solid #eee;background-color:#eee;'>
+          <div class="col">Farm Name</div>
+          <div class="col">Location</div>
+        </div>
+        <div  ng-repeat="farmArray in farms">
+
+		  <div class="row" ng-repeat="farm in farmArray" style="border:1px solid #eee;">
+			<div class="col"><a href="#/tab/dash/{{farm.id}}">{{farm.farm_name}}</a></div>
+			<div class="col">{{farm.region}} / {{farm.town}}</div>
+		  </div>
+         
+        </div>
+	</div>
+
+      
+  
+  </ion-content>
+  
+</ion-view>
+  

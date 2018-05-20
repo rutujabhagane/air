@@ -1,0 +1,58 @@
+<ion-pane class='splash2'>
+<style>
+	svg{
+	    margin-top: 4em;
+		margin-left: 50%;
+	}
+</style>
+<div class='splash2'>
+	
+	<ion-header-bar style='border-bottom:0px;'>
+		<h1 class="title" style='text-align:center;margin-left:16px;'>Log In</h1>
+  	</ion-header-bar>
+
+	<div style='margin-top:20%'>
+		
+		<div id="logo" style='text-align:center;margin-bottom:1em;'>
+            <img src="img/logo.png">
+        </div>
+	
+		
+		<form name='loginForm' ng-submit="doLogin()">
+			<div class="list" style="margin-left:1em;margin-right:1em;font-family:OpenSans_font;">
+			  <label class="item item-input item-icon-right" >
+			  
+				<i class="placeholder-icon success-icon" ng-class="{'icon ion-checkmark':signupForm.username.$dirty && signupForm.username.$valid}"></i>
+				
+				<span class="input-label">Phone</span>
+				<input type="text" class='input-field-cutom' placeholder="Your phone number" name='phone' ng-model='loginInCredentials.phone' required>
+				
+			  </label>
+			  
+			  <label class="item item-input item-icon-right">
+				<i class="placeholder-icon success-icon" ng-class="{'icon ion-checkmark':signupForm.email.$dirty && signupForm.email.$valid}"></i>
+				<span class="input-label">PIN</span>
+				<input type="password" class='input-field-cutom' placeholder="Your PIN"  name='pin' ng-model='loginInCredentials.pin' required>
+			  </label>
+			
+			   <p class="assertive error" ng-show="signin_error" style='text-align:center;margin-top:1em;position:absolute;z-index:18;padding-left:87px;'>{{signin_error}}</p>
+				
+			  <ion-process-spinner style="text-align:center;" processing="processing" spinner="spiral" css-class="spinner-balanced">
+			  <div class='button-bar' style='margin-top:3.3em;'>
+				<button style='border-radius:0.5em;' ng-disabled='loginForm.$invalid || loginForm.$pristine' class='button  button-balanced'>Log in</button>
+			  </div>
+			  </ion-process-spinner>
+			  
+		
+			  
+			</div>
+			
+		</form>
+	</div>
+	
+	<ion-footer-bar class="bar-assertive hide-on-keyboard-open" style="height: 54px;padding-top: 0px;padding-bottom: 0px;">
+       <div style='font-size:0.9em;font-family:OpenSans_font;'>Having problem logging in? Contact your administrator associated to where where your farm is</div>
+    </ion-footer-bar>
+	
+</div>
+</ion-pane>

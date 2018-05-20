@@ -1,0 +1,22 @@
+<!-- Abstract template for tabs-->
+<ion-nav-bar class="bar-balanced">
+      <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+<ion-tabs class="tabs-icon-top tabs-balanced tabs-color-active-white tabs_ok">
+
+  <!-- Home Tab -->
+  <ion-tab title="Dashboard" icon-off="ion-ios-home" icon-on="ion-ios-home" href="#/tab/dash">
+    <ion-nav-view name="tab-dash"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Notifications Tab -->
+  <ion-tab title="Messages"  badge="" icon-off="ion-email" icon-on="ion-email" href="#/tab/messages">
+    <ion-nav-view name="tab-messages"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Settings Tab -->
+  <ion-tab title="Settings" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/settings">
+    <ion-nav-view name="tab-settings"></ion-nav-view>
+  </ion-tab>
+
+</ion-tabs>

@@ -1,0 +1,5 @@
+ionic cordova build android --prod --release
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore airkey.jks android-release-unsigned.apk air
+
+C:\Users\Asad\Documents\AndroidWorkspace\android-sdk-windows\build-tools\19.1.0\zipalign -v 4 android-release-unsigned.apk air.0.1.apk 
